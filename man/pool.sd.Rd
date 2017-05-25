@@ -15,6 +15,3 @@ pool.sd(sds, ns)
 This function takes in a vector of standard deviations and sample sizes
 to create a pooled standard deviation
 }
-\examples{
-pool.sd()
-}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/numformat.R
 \name{numformat}
 \alias{numformat}
-\title{Format a number for APA style}
+\title{Format a number bounded on -1, 1 for APA style}
 \usage{
 numformat(val)
 }
@@ -10,5 +10,5 @@ numformat(val)
 \item{val}{The number to be formatted}
 }
 \description{
-Format a number for APA style
+Common targets for this function are p-values, correlations, R^2, etc.
 }

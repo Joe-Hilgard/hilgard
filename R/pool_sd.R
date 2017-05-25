@@ -4,10 +4,6 @@
 #' to create a pooled standard deviation
 #' @param sds Vector of standard deviations
 #' @param ns Vector of sample sizes
-#' @keywords
-#' @export
-#' @examples
-#' pool.sd()
 
 pool.sd = function (sds, ns) {
   SSlist = sds^2 %*% (ns-1)
