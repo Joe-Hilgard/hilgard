@@ -1,5 +1,6 @@
-#' Format a number for APA style
+#' Format a number bounded on -1, 1 for APA style
 #'
+#' Common targets for this function are p-values, correlations, R^2, etc.
 #' @param val The number to be formatted
 
 numformat <- function(val) {

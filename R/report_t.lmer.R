@@ -7,8 +7,6 @@
 #' @param model lmer model object from which to extract t-value.
 #' @param effect Parameter with t-value of interest
 
-
-
 report_t.lmer <- function(model, effect) {
   frame <- tidy(summary(model)$coefficients)
   names(frame) <- c("term", "estimate", "std.error", "statistic")
