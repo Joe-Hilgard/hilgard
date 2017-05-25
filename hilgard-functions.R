@@ -1,47 +1,10 @@
 #F2R, t2R, r.CI
 # made by joe hilgard in early 2014 *flexes biceps*
-F2R = function(Fstat, N, width=.95, neg=F) {
-  r.equiv = sqrt(Fstat/(Fstat + N - 2)) # is this where the loss of fidelity happens?
-  if(neg==T) {r.equiv=-(r.equiv)}
-  zScore = 1/2 * log((1+r.equiv)/(1-r.equiv))
-  z.se = 1/sqrt(N-3)
-  margin = -qnorm((1-width)/2)
-  z.low = r.equiv-margin*z.se
-  z.hi = r.equiv+margin*z.se
-  r.equiv.low = (exp(2*z.low)-1)/(exp(2*z.low)+1)
-  r.equiv.hi = (exp(2*z.hi)-1)/(exp(2*z.hi)+1)
-  return(list("point" = r.equiv,
-              "CI" = c(r.equiv.low, r.equiv.hi),
-              "SE" = "???",
-              "Z" = zScore,
-              "SE_z" = z.se))
-}
 
-t2R = function(tstat, N, digits=2) {
-  neg = tstat<0
-  Fstat = tstat^2
-  r.equiv = sqrt(Fstat/(Fstat + N - 2))
-  if(neg==T) {r.equiv=-(r.equiv)}
-  zScore = 1/2 * log((1+r.equiv)/(1-r.equiv))
-  z.se = 1/sqrt(N-3)
-  z.low = r.equiv-1.96*z.se
-  z.hi = r.equiv+1.96*z.se
-  r.equiv.low = (exp(2*z.low)-1)/(exp(2*z.low)+1)
-  r.equiv.hi = (exp(2*z.hi)-1)/(exp(2*z.hi)+1)
-  # print(paste("Point estimate:", r.equiv))
-  # print(paste("95% CI: [", r.equiv.low, ", ", r.equiv.hi, "]", sep=""))
-  return(list("r" = r.equiv, "LL" = r.equiv.low, "UL" = r.equiv.hi))
-}
 
-r.CI=function(r.equiv, N) {
-  zScore = 1/2 * log((1+r.equiv)/(1-r.equiv))
-  z.se = 1/sqrt(N-3)
-  z.low = r.equiv-1.96*z.se
-  z.hi = r.equiv+1.96*z.se
-  r.equiv.low = (exp(2*z.low)-1)/(exp(2*z.low)+1)
-  r.equiv.hi = (exp(2*z.hi)-1)/(exp(2*z.hi)+1)
-  return(c(r.equiv.low, r.equiv, r.equiv.hi))
-}
+
+
+
 
 
 

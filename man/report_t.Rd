@@ -12,9 +12,8 @@ report_t(model, effect)
 \item{effect}{Parameter with t-value of interest}
 }
 \description{
-Reports t, p-value, and ESCI on r for a model term.
-TODO: Figure out if this is bivariate or partial r.
-TODO: Report degrees of freedom.
+Reports t, p-value, and ESCI on b for a model term.
+TODO: Figure out if it's possible to get r out of this
 
 import relevant namespace
 }
