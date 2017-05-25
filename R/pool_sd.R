@@ -5,6 +5,8 @@
 #' @param sds Vector of standard deviations
 #' @param ns Vector of sample sizes
 #' @template imports
+#'
+#' @export
 
 pool.sd <- function (sds, ns) {
   SSlist = sds^2 %*% (ns-1)

@@ -4,6 +4,8 @@
 #' TODO: Figure that out.
 #' @param model Model object from which to extract chisq-value.
 #' @template imports
+#'
+#' @export
 
 
 report_kt <- function(model) {

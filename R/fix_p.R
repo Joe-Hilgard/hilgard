@@ -3,6 +3,8 @@
 #' This function drops the leading 0 and truncates low values to "p < .001"
 #' @param p The p-value to be printed
 #' @template imports
+#'
+#' @export
 
 fix_p <- function(p) {
   p <- ifelse(p < .001,

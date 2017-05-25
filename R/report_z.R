@@ -4,6 +4,8 @@
 #' @param model Model object from which to extract F-value.
 #' @param effect Parameter with F-value of interest
 #' @template imports
+#'
+#' @export
 
 report_z <- function(model, effect) {
   frame <- tidy(model)
