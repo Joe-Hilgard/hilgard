@@ -5,7 +5,7 @@
 #' @param sds Vector of standard deviations
 #' @param ns Vector of sample sizes
 
-pool.sd = function (sds, ns) {
+pool.sd <- function (sds, ns) {
   SSlist = sds^2 %*% (ns-1)
   pool.var = sum(SSlist) / sum(ns-1)
   return(sqrt(pool.var))
