@@ -3,6 +3,7 @@
 #' Report a z-test as z = z, p = .###, OR = OR [OR.LL, OR.UL].
 #' @param model Model object from which to extract F-value.
 #' @param effect Parameter with F-value of interest
+#' @template imports
 
 report_z <- function(model, effect) {
   frame <- tidy(model)

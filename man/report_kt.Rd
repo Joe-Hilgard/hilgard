@@ -12,4 +12,6 @@ report_kt(model)
 \description{
 I don't remember what this was for -- some kind of goodness-of-fit test?
 TODO: Figure that out.
+
+import relevant namespace
 }

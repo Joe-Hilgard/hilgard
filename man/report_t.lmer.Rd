@@ -14,6 +14,8 @@ report_t.lmer(model, effect)
 \description{
 Note that I have no idea what df to supply pt() and that Anova() probably
 uses chi-square LR tests for good reason... so this may be a bad idea.
+
+import relevant namespace
 }
 \details{
 Reports a t-test from an lmer object as t = t, p = ###.

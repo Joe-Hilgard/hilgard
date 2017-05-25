@@ -3,6 +3,7 @@
 #' I don't remember what this was for -- some kind of goodness-of-fit test?
 #' TODO: Figure that out.
 #' @param model Model object from which to extract chisq-value.
+#' @template imports
 
 
 report_kt <- function(model) {

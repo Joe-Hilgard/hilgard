@@ -21,4 +21,6 @@ partial_etasq(SS, SSE, df.1, df.2, conf.level = 0.95, digits = 2)
 }
 \description{
 Report partial eta-squared given sums of squares
+
+import relevant namespace
 }

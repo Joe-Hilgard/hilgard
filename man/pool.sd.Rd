@@ -14,4 +14,6 @@ pool.sd(sds, ns)
 \description{
 This function takes in a vector of standard deviations and sample sizes
 to create a pooled standard deviation
+
+import relevant namespace
 }

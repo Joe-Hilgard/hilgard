@@ -6,6 +6,7 @@
 #' @param df.2 Degrees of freedom of the error term.
 #' @param conf.level Confidence level of CI. Defaults to .95.
 #' @param digits Significant digits to print in output. Defaults to 2.
+#' @template imports
 
 partial_etasq <- function(SS, SSE, df.1, df.2, conf.level = .95, digits = 2) {
   partial_eta <- SS/(SS + SSE)

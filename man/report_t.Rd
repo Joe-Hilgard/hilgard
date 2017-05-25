@@ -15,4 +15,6 @@ report_t(model, effect)
 Reports t, p-value, and ESCI on r for a model term.
 TODO: Figure out if this is bivariate or partial r.
 TODO: Report degrees of freedom.
+
+import relevant namespace
 }
