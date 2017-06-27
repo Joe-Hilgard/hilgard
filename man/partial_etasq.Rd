@@ -4,20 +4,12 @@
 \alias{partial_etasq}
 \title{Report partial eta-squared given sums of squares}
 \usage{
-partial_etasq(SS, SSE, df.1, df.2, conf.level = 0.95, digits = 2)
+partial_etasq(model, effect, type = 3)
 }
 \arguments{
-\item{SS}{Effect's associated sum of squares.}
+\item{model}{GLM object from which to extract SS and SSE}
 
-\item{SSE}{Model's sum of squared errors.}
-
-\item{df.1}{Degrees of freedom of the effect.}
-
-\item{df.2}{Degrees of freedom of the error term.}
-
-\item{conf.level}{Confidence level of CI. Defaults to .95.}
-
-\item{digits}{Significant digits to print in output. Defaults to 2.}
+\item{effect}{Parameter of interest}
 }
 \description{
 Report partial eta-squared given sums of squares

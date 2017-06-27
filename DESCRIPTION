@@ -5,10 +5,10 @@ Authors@R: person("Joseph", "Hilgard", email = "jhilgard@gmail.com", role = c("a
 Description: Various convenience functions for printing model output in .Rmd, calculating effect sizes, 
     and pooling standard deviations.
 Depends: R (>= 3.3.2),
+    car, 
     plyr,
     tidyverse,
-    broom,
-    car
+    broom
 License: MIT
 Encoding: UTF-8
 LazyData: true
