@@ -10,24 +10,30 @@
 
 report_t <- function(model, effect) {
   frame <- tidy(model)
+
   t <- with(frame, statistic[term == effect]) %>%
-    round(2)
+  t <- round(t, 2)
+
   df <- model$df.residual
-  p <- with(frame, p.value[term == effect]) %>%
-    fix_p
-  b <- with(frame, estimate[term == effect]) %>%
-    round(2) %>%
-    numformat()
-  ci <- confint(model) %>%
-    tidy %>%
-    filter(.rownames == effect) %>%
-    select(-c(.rownames)) %>%
-    round(2) %>%
-    numformat()
+
+  p <- with(frame, p.value[term == effect])
+  p <- fix_p(p)
+
+  b <- with(frame, estimate[term == effect])
+  b <- round(b, 2)
+  b <- numformat(b) # What's this?
+
+  ci <- confint(model)
+  ci <- tidy(ci)
+  ci <- filter(ci, .rownames == effect)
+  ci <- select(ci, -c(.rownames))
+  ci <- round(ci, 2)
+  ci <- numformat(ci)
   # make t(df) = t, p = p
   t.out <- paste0("*t*(", df, ") = ", t, ", ", p)
   # make b = b [b.ll, b.ul]
   b.out <- paste0("*b* = ", b, " [", ci[1], ", ", ci[2], "]")
-  paste0(t.out, ", ", b.out)  %>%
-    return()
+
+  output <- paste0(t.out, ", ", b.out)
+  return(output)
 }

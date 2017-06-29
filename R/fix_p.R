@@ -7,14 +7,21 @@
 #' @export
 
 fix_p <- function(p) {
-  p <- ifelse(p < .001,
-              # If p < .001, make it "p < .001" and call it a day
-              "*p* < .001",
-              # Otherwise, round to three digits and lop off the leading decimal
-              p %>%
-                round(3) %>%
-                as.character() %>%
-                substring(2) %>%
-                paste0("*p* = ", .))
-  return(p)
+
+  stopifnot(p <= 1 & p >= 0)
+
+  if(p < .001){
+    output <- "*p* < .001"
+  } else {
+    p <- round(p, 3)
+    p <- as.character(p)
+
+    # TODO: Implement catch for trailing zeroes if p = .100 or .010 or 1.000, etc
+    if (p != 1) {
+      p <- substring(p, 2)
+    }
+    output <- paste0("*p* = ", p)
+  }
+
+  return(output)
 }

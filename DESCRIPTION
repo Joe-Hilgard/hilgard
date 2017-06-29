@@ -4,8 +4,8 @@ Version: 0.0.0.1
 Authors@R: person("Joseph", "Hilgard", email = "jhilgard@gmail.com", role = c("aut", "cre"))
 Description: Various convenience functions for printing model output in .Rmd, calculating effect sizes, 
     and pooling standard deviations.
-Depends: R (>= 3.3.2),
-    car, 
+Depends: R (>= 3.3.2)
+Imports: car, 
     plyr,
     tidyverse,
     broom

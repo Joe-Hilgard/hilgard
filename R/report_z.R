@@ -9,19 +9,23 @@
 
 report_z <- function(model, effect) {
   frame <- tidy(model)
-  z <- with(frame, statistic[term == effect]) %>%
-    round(2)
-  p <- with(frame, p.value[term == effect]) %>%
-    fix_p
-  OR <- with(frame, estimate[term == effect]) %>%
-    exp %>%
-    round(2)
-  ci <- confint(model) %>%
-    tidy() %>%
-    filter(.rownames == effect) %>%
-    select(-.rownames) %>%
-    exp() %>%
-    round(2)
-  paste0("*z* = ", z, ", ", p, ", *OR* = ", OR, " [", ci[1], ", ", ci[2], "]") %>%
-    return()
+  z <- with(frame, statistic[term == effect])
+  z <- round(2)
+
+  p <- with(frame, p.value[term == effect])
+  p <- fix_p(p)
+
+  OR <- with(frame, estimate[term == effect])
+  OR <- exp(OR)
+  OR <- round(OR, 2)
+
+  ci <- confint(model)
+  ci <- tidy(ci)
+  ci <- filter(ci, .rownames == effect)
+  ci <- select(ci, -.rownames)
+  ci <- exp(ci)
+  ci <- round(ci, 2)
+
+  output <- paste0("*z* = ", z, ", ", p, ", *OR* = ", OR, " [", ci[1], ", ", ci[2], "]")
+  return(output)
 }
