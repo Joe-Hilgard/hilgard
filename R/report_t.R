@@ -11,7 +11,7 @@
 report_t <- function(model, effect) {
   frame <- tidy(model)
 
-  t <- with(frame, statistic[term == effect]) %>%
+  t <- with(frame, statistic[term == effect])
   t <- round(t, 2)
 
   df <- model$df.residual
