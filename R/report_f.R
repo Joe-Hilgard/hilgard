@@ -14,7 +14,7 @@ report_f <- function(model, effect) {
   df2 <- with(frame, df[term == "Residuals"])
 
   f <- with(frame, statistic[term == effect])
-  f <- round(f, 2)
+  f <- numformat(f)
 
   p <- with(frame, p.value[term == effect])
   p <- fix_p(p)

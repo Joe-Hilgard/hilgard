@@ -17,5 +17,7 @@ t2R = function(tstat, N) {
   r.equiv.hi = (exp(2*z.hi)-1)/(exp(2*z.hi)+1)
   # print(paste("Point estimate:", r.equiv))
   # print(paste("95% CI: [", r.equiv.low, ", ", r.equiv.hi, "]", sep=""))
-  return(list("r" = r.equiv, "LL" = r.equiv.low, "UL" = r.equiv.hi))
+  return(data.frame("r" = r.equiv,
+                    "r.ll" = r.equiv.low,
+                    "r.ul" = r.equiv.hi))
 }

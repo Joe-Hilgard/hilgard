@@ -14,6 +14,7 @@ report_t(model, effect)
 \description{
 Reports t, p-value, and ESCI on b for a model term.
 TODO: Figure out if it's possible to get r out of this
+TODO: consider implementing d for dichotomous predictors
 
 import relevant namespace
 }
