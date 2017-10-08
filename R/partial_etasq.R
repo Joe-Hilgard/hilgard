@@ -8,7 +8,7 @@
 
 partial_etasq <- function(model, effect, type = 3) {
   # Get relevant numbers from ANOVA table (SS, SSE, dfs)
-  output <- tidy(Anova(model, type = type))
+  output <- broom::tidy(car::Anova(model, type = type))
   SS <- subset(output, term == effect)[, "sumsq"]
   df.1 <- subset(output, term == effect)[, "df"]
   SSE <- subset(output, term == "Residuals")[, "sumsq"]
