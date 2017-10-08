@@ -19,7 +19,7 @@ partial_etasq <- function(model, effect, type = 3) {
   partial.eta <- numformat(partial.eta)
 
   # Calclulate confidence limits
-  Lims <- conf.limits.ncf(F.value = (SS/df.1)/(SSE/df.2),
+  Lims <- MBESS::conf.limits.ncf(F.value = (SS/df.1)/(SSE/df.2),
                           df.1 <- df.1, df.2 <- df.2,
                           conf.level = .95)
   Lower.lim <- Lims$Lower.Limit/(Lims$Lower.Limit + df.1 + df.2 + 1)

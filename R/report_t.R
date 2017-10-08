@@ -10,7 +10,7 @@
 #' @export
 
 report_t <- function(model, effect) {
-  frame <- tidy(model)
+  frame <- broom::tidy(model)
 
   t <- with(frame, statistic[term == effect])
   t <- round(t, 2)

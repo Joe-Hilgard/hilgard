@@ -10,7 +10,7 @@
 
 report_LRchisq <- function(model, effect) {
 
-  frame <- tidy(car::Anova(model, type = 3))
+  frame <- broom::tidy(car::Anova(model, type = 3))
   df <- with(frame, df[term == effect])
 
   chisq <- with(frame, LR.Chisq[term == effect])
