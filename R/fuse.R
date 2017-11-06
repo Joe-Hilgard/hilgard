@@ -26,6 +26,6 @@ fuse <- function(m1, sd1, n1, m2, sd2, n2) {
   n1i <- sum(n1)
   n2i <- sum(n2)
   df <- data.frame(m1i, m2i, sd1i, sd2i, n1i, n2i)
-  return(escalc("SMD", m1i = m1i, m2i = m2i, sd1i = sd1i, sd2i = sd2i, n1i = n1i, n2i = n2i,
+  return(metafor::escalc("SMD", m1i = m1i, m2i = m2i, sd1i = sd1i, sd2i = sd2i, n1i = n1i, n2i = n2i,
                 data = df))
 }
