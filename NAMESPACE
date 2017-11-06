@@ -2,9 +2,11 @@
 
 export(F2R)
 export(fix_p)
+export(fuse)
 export(numformat)
 export(partial_etasq)
 export(pool.sd)
+export(report_LRchisq)
 export(report_f)
 export(report_kt)
 export(report_t)
