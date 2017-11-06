@@ -1,5 +1,6 @@
 #' Report a likelihood-ratio chisq-test
 #'
+#' Appropriate for use with "glm" objects.
 #' Report an LR chisq-test as chisq(df) = chisq, p = .###.
 #' @param model Model object from which to extract chisq-value.
 #' @param effect Parameter with chisq-value of interest
@@ -9,7 +10,7 @@
 
 report_LRchisq <- function(model, effect) {
 
-  frame <- tidy(car::Anova(model, type = 3))
+  frame <- broom::tidy(car::Anova(model, type = 3))
   df <- with(frame, df[term == effect])
 
   chisq <- with(frame, LR.Chisq[term == effect])

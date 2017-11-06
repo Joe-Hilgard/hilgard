@@ -16,9 +16,10 @@ F2R = function(Fstat, N, width=.95, neg=F) {
   z.hi = r.equiv+margin*z.se
   r.equiv.low = (exp(2*z.low)-1)/(exp(2*z.low)+1)
   r.equiv.hi = (exp(2*z.hi)-1)/(exp(2*z.hi)+1)
-  return(list("point" = r.equiv,
-              "CI" = c(r.equiv.low, r.equiv.hi),
-              "SE" = "???",
-              "Z" = zScore,
-              "SE_z" = z.se))
+  return(data.frame("r" = r.equiv,
+                    "r.ci.ll" = r.equiv.low,
+                    "r.ci.ul" = r.equiv.hi,
+                    #"SE" = "???",
+                    "Z" = zScore,
+                    "z.se" = z.se))
 }

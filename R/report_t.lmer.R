@@ -11,12 +11,12 @@
 #' @export
 
 report_t.lmer <- function(model, effect) {
-  frame <- tidy(summary(model)$coefficients)
+  frame <- broom::tidy(summary(model)$coefficients)
   names(frame) <- c("term", "estimate", "std.error", "statistic")
   frame$p.value <- 2*pt(abs(frame$statistic), df = 1e3, lower.tail = F)
 
   t <- with(frame, statistic[term == effect]) %>%
-  t <- round(t, 2)
+  t <- numformat(t)
 
   p <- with(frame, p.value[term == effect])
   p <- fix_p(p)

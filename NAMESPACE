@@ -6,6 +6,10 @@ export(fuse)
 export(numformat)
 export(partial_etasq)
 export(pool.sd)
+<<<<<<< HEAD
+=======
+export(report_LR)
+>>>>>>> 33cb644dd46043a64fd9a76e7b5db824248d4938
 export(report_LRchisq)
 export(report_f)
 export(report_kt)

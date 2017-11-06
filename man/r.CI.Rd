@@ -2,7 +2,7 @@
 % Please edit documentation in R/r.CI.R
 \name{r.CI}
 \alias{r.CI}
-\title{Fetch confidence interval given a Pearson r}
+\title{Fetch confidence interval given a Pearson r.}
 \usage{
 r.CI(r.equiv, N)
 }
@@ -12,5 +12,5 @@ r.CI(r.equiv, N)
 \item{N}{Total sample size}
 }
 \description{
-Fetch confidence interval given a Pearson r
+This method uses the Fisher's Z to make the CI.
 }

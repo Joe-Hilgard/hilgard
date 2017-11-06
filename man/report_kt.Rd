@@ -2,7 +2,7 @@
 % Please edit documentation in R/report_kt.R
 \name{report_kt}
 \alias{report_kt}
-\title{Report the kt test}
+\title{Report the Kruskal test of medians}
 \usage{
 report_kt(model)
 }
@@ -10,8 +10,7 @@ report_kt(model)
 \item{model}{Model object from which to extract chisq-value.}
 }
 \description{
-I don't remember what this was for -- some kind of goodness-of-fit test?
-TODO: Figure that out.
+Report the results of Kruskal-Wallis Rank Sum test as performed by kruskal.test()
 
 import relevant namespace
 }

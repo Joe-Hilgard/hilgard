@@ -9,12 +9,12 @@
 
 report_f <- function(model, effect) {
 
-  frame <- tidy(car::Anova(model, type = 3))
+  frame <- broom::tidy(car::Anova(model, type = 3))
   df1 <- with(frame, df[term == effect])
   df2 <- with(frame, df[term == "Residuals"])
 
   f <- with(frame, statistic[term == effect])
-  f <- round(f, 2)
+  f <- numformat(f)
 
   p <- with(frame, p.value[term == effect])
   p <- fix_p(p)
