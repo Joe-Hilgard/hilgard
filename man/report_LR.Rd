@@ -15,6 +15,4 @@ report_LR(row)
 Report an LR chisq-test as chisq(df) = chisq, p = .###.
 I am considering deprecating this and replacing it with a generic
 reporter function for manually-supplied chi-sqs or stats in general.
-
-import relevant namespace
 }

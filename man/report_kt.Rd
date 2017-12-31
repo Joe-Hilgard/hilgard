@@ -11,6 +11,4 @@ report_kt(model)
 }
 \description{
 Report the results of Kruskal-Wallis Rank Sum test as performed by kruskal.test()
-
-import relevant namespace
 }

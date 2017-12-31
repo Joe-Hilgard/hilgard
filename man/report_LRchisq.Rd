@@ -14,6 +14,4 @@ report_LRchisq(model, effect)
 \description{
 Appropriate for use with "glm" objects.
 Report an LR chisq-test as chisq(df) = chisq, p = .###.
-
-import relevant namespace
 }

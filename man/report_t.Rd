@@ -4,7 +4,7 @@
 \alias{report_t}
 \title{Report a t-value from a regression model}
 \usage{
-report_t(model, effect)
+report_t(model, effect, metric = "b", n1, n2)
 }
 \arguments{
 \item{model}{Model object from which to extract t-value.}
@@ -15,6 +15,4 @@ report_t(model, effect)
 Reports t, p-value, and ESCI on b for a model term.
 TODO: Figure out if it's possible to get r out of this
 TODO: consider implementing d for dichotomous predictors
-
-import relevant namespace
 }

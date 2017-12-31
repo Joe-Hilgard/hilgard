@@ -13,6 +13,4 @@ report_z(model, effect)
 }
 \description{
 Report a z-test as z = z, p = .###, OR = OR [OR.LL, OR.UL].
-
-import relevant namespace
 }

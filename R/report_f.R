@@ -3,7 +3,6 @@
 #' Report an F-test as F(df1, df2) = F, p = .###.
 #' @param model Model object from which to extract F-value.
 #' @param effect Parameter with F-value of interest
-#' @template imports
 #'
 #' @export
 

@@ -4,7 +4,6 @@
 #' Report an LR chisq-test as chisq(df) = chisq, p = .###.
 #' @param model Model object from which to extract chisq-value.
 #' @param effect Parameter with chisq-value of interest
-#' @template imports
 #'
 #' @export
 

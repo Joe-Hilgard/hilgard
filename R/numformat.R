@@ -2,7 +2,6 @@
 #'
 #' Common targets for this function are p-values, correlations, R^2, etc.
 #' @param val The number to be formatted
-#' @template imports
 #'
 #' @export
 

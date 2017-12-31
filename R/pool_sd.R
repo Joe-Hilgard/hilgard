@@ -4,7 +4,6 @@
 #' to create a pooled standard deviation
 #' @param sds Vector of standard deviations
 #' @param ns Vector of sample sizes
-#' @template imports
 #'
 #' @export
 

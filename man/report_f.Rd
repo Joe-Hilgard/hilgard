@@ -13,6 +13,4 @@ report_f(model, effect)
 }
 \description{
 Report an F-test as F(df1, df2) = F, p = .###.
-
-import relevant namespace
 }

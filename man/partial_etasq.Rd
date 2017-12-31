@@ -13,6 +13,4 @@ partial_etasq(model, effect, type = 3)
 }
 \description{
 Report partial eta-squared given sums of squares
-
-import relevant namespace
 }

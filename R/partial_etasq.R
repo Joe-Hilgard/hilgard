@@ -2,7 +2,6 @@
 #'
 #' @param model GLM object from which to extract SS and SSE
 #' @param effect Parameter of interest
-#' @template imports
 #'
 #' @export
 

@@ -11,6 +11,4 @@ numformat(val)
 }
 \description{
 Common targets for this function are p-values, correlations, R^2, etc.
-
-import relevant namespace
 }

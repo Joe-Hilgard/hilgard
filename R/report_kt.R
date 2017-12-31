@@ -3,7 +3,6 @@
 #' Report the results of Kruskal-Wallis Rank Sum test as performed by kruskal.test()
 #'
 #' @param model Model object from which to extract chisq-value.
-#' @template imports
 #'
 #' @export
 

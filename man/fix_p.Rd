@@ -11,6 +11,4 @@ fix_p(p)
 }
 \description{
 This function drops the leading 0 and truncates low values to "p < .001"
-
-import relevant namespace
 }

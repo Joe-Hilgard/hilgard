@@ -5,11 +5,10 @@
 #' TODO: consider implementing d for dichotomous predictors
 #' @param model Model object from which to extract t-value.
 #' @param effect Parameter with t-value of interest
-#' @template imports
 #'
 #' @export
 
-report_t <- function(model, effect) {
+report_t <- function(model, effect, metric = "b", n1, n2) {
   frame <- broom::tidy(model)
 
   t <- with(frame, statistic[term == effect])
@@ -20,19 +19,42 @@ report_t <- function(model, effect) {
   p <- with(frame, p.value[term == effect])
   p <- fix_p(p)
 
-  b <- with(frame, estimate[term == effect])
-  b <- numformat(b)
+  if(metric == "b") {
+    b <- with(frame, estimate[term == effect])
+    b <- numformat(b)
 
-  ci <- confint(model)
-  ci <- tidy(ci)
-  ci <- filter(ci, .rownames == effect)
-  ci <- select(ci, -c(.rownames))
-  ci <- numformat(ci)
+    ci <- confint(model)
+    ci <- broom::tidy(ci)
+    ci <- filter(ci, .rownames == effect)
+    ci <- select(ci, -c(.rownames))
+    ci <- numformat(ci)
+
+    # make b = b [b.ll, b.ul]
+    esci.out <- paste0("*b* = ", b, " [", ci[1], ", ", ci[2], "]")
+  }
+
+  if (metric == "d") {
+    # if(n1 == NULL | n2 == NULL) {
+    #   n1 <- ???
+    #   n2 <- ???
+    # }
+    esci <- with(frame, statistic[term == effect]) %>%
+      compute.es::tes(n1, n2, verbose = F)
+
+    esci.out <- paste0("*d* = ", esci$d, " [", esci$l.d, ", ", esci$u.d, "]")
+  }
+
+  if (metric == "r") {
+    esci <- with(frame, statistic[term == effect]) %>%
+      compute.es::tes(n1, n2, verbose = F)
+
+    esci.out <- paste0("*r* = ", esci$r, " [", esci$l.r, ", ", esci$u.r, "]")
+  }
+
   # make t(df) = t, p = p
   t.out <- paste0("*t*(", df, ") = ", t, ", ", p)
-  # make b = b [b.ll, b.ul]
-  b.out <- paste0("*b* = ", b, " [", ci[1], ", ", ci[2], "]")
 
-  output <- paste0(t.out, ", ", b.out)
+
+  output <- paste0(t.out, ", ", esci.out)
   return(output)
 }
