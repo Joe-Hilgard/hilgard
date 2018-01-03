@@ -1,8 +1,6 @@
 #' Report a t-value from a regression model
 #'
 #' Reports t, p-value, and ESCI on b for a model term.
-#' TODO: Figure out if it's possible to get r out of this
-#' TODO: consider implementing d for dichotomous predictors
 #' @param model Model object from which to extract t-value.
 #' @param effect Parameter with t-value of interest
 #'
@@ -48,7 +46,8 @@ report_t <- function(model, effect, metric = "b", n1, n2) {
     esci <- with(frame, statistic[term == effect]) %>%
       compute.es::tes(n1, n2, verbose = F)
 
-    esci.out <- paste0("*r* = ", esci$r, " [", esci$l.r, ", ", esci$u.r, "]")
+    esci.out <- paste0("*r* = ", numformat(esci$r),
+                       " [", numformat(esci$l.r), ", ", numformat(esci$u.r), "]")
   }
 
   # make t(df) = t, p = p
