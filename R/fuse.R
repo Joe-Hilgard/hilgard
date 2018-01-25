@@ -4,10 +4,10 @@
 #' Use this function to combine the relevant cells into just two cells for entry into your spreadsheet.
 #' @param m1 Vector of means to pool into Group 1
 #' @param sd1 Vector of SDs to pool into Group 1
-#' @param n1i Vector of cell ns to pool into Group 1
+#' @param n1 Vector of cell ns to pool into Group 1
 #' @param m2 Vector of means to pool into Group 2
 #' @param sd2 Vector of SDs to pool into Group 2
-#' @param n2i Vector of cell ns to pool into Group 2
+#' @param n2 Vector of cell ns to pool into Group 2
 #'
 #' @export
 #' @examples

@@ -13,6 +13,4 @@ report_t(model, effect, metric = "b", n1, n2)
 }
 \description{
 Reports t, p-value, and ESCI on b for a model term.
-TODO: Figure out if it's possible to get r out of this
-TODO: consider implementing d for dichotomous predictors
 }

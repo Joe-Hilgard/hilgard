@@ -11,13 +11,13 @@ fuse(m1, sd1, n1, m2, sd2, n2)
 
 \item{sd1}{Vector of SDs to pool into Group 1}
 
+\item{n1}{Vector of cell ns to pool into Group 1}
+
 \item{m2}{Vector of means to pool into Group 2}
 
 \item{sd2}{Vector of SDs to pool into Group 2}
 
-\item{n1i}{Vector of cell ns to pool into Group 1}
-
-\item{n2i}{Vector of cell ns to pool into Group 2}
+\item{n2}{Vector of cell ns to pool into Group 2}
 }
 \description{
 Often you need to calculate an effect size from a 2×2 (or more complex!) study design.
