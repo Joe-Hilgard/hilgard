@@ -46,13 +46,21 @@ report_t <- function(model, effect, metric = "b", n1, n2) {
     esci <- with(frame, statistic[term == effect]) %>%
       compute.es::tes(n1, n2, verbose = F)
 
-    esci.out <- paste0("*r* = ", numformat(esci$r),
-                       " [", numformat(esci$l.r), ", ", numformat(esci$u.r), "]")
+    # If t is positive, r is positive
+    if (with(frame, statistic[term == effect]) >= 0) {
+      esci.out <- paste0("*r* = ", numformat(esci$r),
+                         " [", numformat(esci$l.r), ", ", numformat(esci$u.r), "]")
+    }
+
+    # If t is negative, r is negative
+    if (with(frame, statistic[term == effect]) < 0) {
+      esci.out <- paste0("*r* = ", numformat(-esci$r),
+                         " [", numformat(-esci$u.r), ", ", numformat(-esci$l.r), "]")
+    }
   }
 
   # make t(df) = t, p = p
   t.out <- paste0("*t*(", df, ") = ", t, ", ", p)
-
 
   output <- paste0(t.out, ", ", esci.out)
   return(output)
