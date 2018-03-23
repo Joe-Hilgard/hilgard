@@ -23,8 +23,8 @@ report_t <- function(model, effect, metric = "b", n1, n2) {
 
     ci <- confint(model)
     ci <- broom::tidy(ci)
-    ci <- filter(ci, .rownames == effect)
-    ci <- select(ci, -c(.rownames))
+    ci <- dplyr::filter(ci, .rownames == effect)
+    ci <- dplyr::select(ci, -c(.rownames))
     ci <- numformat(ci)
 
     # make b = b [b.ll, b.ul]
