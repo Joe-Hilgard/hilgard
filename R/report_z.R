@@ -9,7 +9,7 @@
 report_z <- function(model, effect) {
   frame <- broom::tidy(model)
   z <- with(frame, statistic[term == effect])
-  z <- round(2)
+  z <- round(z, 2)
 
   p <- with(frame, p.value[term == effect])
   p <- fix_p(p)
