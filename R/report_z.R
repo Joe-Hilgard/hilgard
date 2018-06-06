@@ -19,9 +19,9 @@ report_z <- function(model, effect) {
   OR <- round(OR, 2)
 
   ci <- confint(model)
-  ci <- tidy(ci)
-  ci <- filter(ci, .rownames == effect)
-  ci <- select(ci, -.rownames)
+  ci <- broom::tidy(ci)
+  ci <- dplyr::filter(ci, .rownames == effect)
+  ci <- dplyr::select(ci, -.rownames)
   ci <- exp(ci)
   ci <- round(ci, 2)
 
